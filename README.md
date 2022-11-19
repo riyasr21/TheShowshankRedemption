@@ -7,9 +7,25 @@ Make a new folder for the DBMS project.
 ```sh
 git clone https://github.com/riyasr21/TheShowshankRedemption.git
 
+
+```
+Navigate to the backend folder in TheShowshankRedemption and the backend is then started using
+```sh
+npm start
+
+
+```
+
+After starting the backend, start the frontend by navigating to the client folder in the TheShowshankRedemption 
+```sh
+npm run
+
+
 ```
    
 Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
+
+# DON'T READ AFTER THIS, TO BE EDITED.
 
 It is suggested to use VS Code for this project. Remix does not support css pre-processors out of the box so we are using [Sass](https://sass-lang.com/) to compile our SCSS files into CSS.
 
