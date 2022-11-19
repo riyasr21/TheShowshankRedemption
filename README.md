@@ -11,6 +11,7 @@ git clone https://github.com/riyasr21/TheShowshankRedemption.git
 ```
 Navigate to the backend folder in TheShowshankRedemption and the backend is then started using
 ```sh
+npm install
 npm start
 
 
@@ -18,6 +19,7 @@ npm start
 
 After starting the backend, start the frontend by navigating to the client folder in the TheShowshankRedemption 
 ```sh
+npm install
 npm run
 
 
