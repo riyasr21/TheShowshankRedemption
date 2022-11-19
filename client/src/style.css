@@ -1,11 +1,40 @@
-.App {
+.heroSection {
    
-    padding: 0 100px;
-    display: flex;
+    /* padding: 0 100px;
+    display: flex; */
+    width: 100%;
+    background-color: #F2F2F0;
     align-items: center;
     justify-content: center;
 }
 
+.heroSection__left {
+    padding-top: 7%;
+    width: 30%;
+    padding-left: 20%;
+    
+    
+}
+.heroSection__left--green {
+    background-color: #CCF279;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: smaller;
+    font-weight: bolder;
+}
+.heroSection__left--text {
+    padding-top: 20px;
+    text-align: start;
+    font-family: 'Raleway', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    text-shadow: 1.5px 0 #888888;
+    
+}
 .books {
     display: flex;
     gap: 10px

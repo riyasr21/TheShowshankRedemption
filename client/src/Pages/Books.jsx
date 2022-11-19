@@ -1,4 +1,5 @@
 import React, { useEffect ,  useState } from 'react'
+import Header from '../Components/Header/Header';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import "../style.css";
@@ -33,7 +34,19 @@ const Books = () => {
     }
 
   return (
-    <div><h1>Book Shop</h1>
+    
+    <div className='heroSection'>
+        <Header/>
+        <div className="heroSection__left">
+            <div className="heroSection__left--green">
+                A SIMPLE WEBSITE
+            </div>
+
+            <div className="heroSection__left--text">
+                <b>Finding movies and shows made easier</b>
+            </div>
+        </div>
+        {/* <h1>Book Shop</h1>
     <div className="books">
         {books.map(book => (
             <div className="book" id={book.idbooks} key= {book.idbooks}>
@@ -48,7 +61,7 @@ const Books = () => {
             </div>
         ))}
     </div>
-    <button><Link to="/add">Add new book</Link></button>
+    <button><Link to="/add">Add new book</Link></button> */}
     </div>
   )
 }
