@@ -3,15 +3,24 @@
     /* padding: 0 100px;
     display: flex; */
     width: 100%;
+    display: flex;
+    flex-direction: row;
     background-color: #F2F2F0;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    gap: 1%;
+}
+.landingPage {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
 }
 
 .heroSection__left {
     padding-top: 7%;
     width: 30%;
-    padding-left: 20%;
+    padding-left: 10%;
     
     
 }
@@ -24,6 +33,7 @@
     font-family: 'Raleway', sans-serif;
     font-size: smaller;
     font-weight: bolder;
+    letter-spacing: 2px;
 }
 .heroSection__left--text {
     padding-top: 20px;
@@ -31,9 +41,70 @@
     font-family: 'Raleway', sans-serif;
     font-size: 60px;
     font-weight: 900;
-    letter-spacing: 2.5px;
+    letter-spacing: 3px;
     text-shadow: 1.5px 0 #888888;
     
+}
+
+.heroSection__right {
+    padding-top: 4%;
+    margin-top: 6%;
+    padding-right: 10%;
+    /* background-color: aqua; */
+    width: 16%;
+    display: flex;
+    flex-direction: row;
+    align-self: end;
+    background-color: #CCF279;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.heroSection__right--img1 {
+    display: flex;
+}
+
+.heroSection__right--img1 img {
+    display: inline;
+    z-index: 3;
+}
+.heroSection__right--img2 {
+    display: flex;
+    position: relative;
+    top: -100px;
+    left: -10px
+}
+.heroSection__right--img2 img {
+    display: inline;
+    z-index: 4;
+}
+
+.heroSection_right--img1--whiteBg, .heroSection_right--img2--whiteBg {
+    
+    width: 155px;
+    height: 250px;
+    background: white;
+    margin-left: -180px;
+    margin-top: 70px;
+    border-radius: 2px;
+    transform:
+    perspective(600px)
+    rotateX(20deg);
+  
+   
+}
+.heroSection__right--img2--whiteBg {
+    z-index: 3;
+}
+
+.heroSection__right--lines {
+    width: 155px;
+    height: 250px;
+    background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .books {
     display: flex;
@@ -53,5 +124,5 @@ img {
     height: 300px;
     object-fit: cover;
     background-color: rgba(180, 180, 50, 0.723);
+    border-radius: 10px;
 }
-

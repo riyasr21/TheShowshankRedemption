@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/books", (req, res) => {
-  const que = "SELECT * FROM books";
+  const que = "SELECT * FROM titlesN";
   db.query(que, (err, data) => {
     if (err) {
       return res.json(err);
