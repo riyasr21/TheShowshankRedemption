@@ -4,7 +4,7 @@
   
   html,
   body {
-    overscroll-behavior-y: contain;
+    /* overscroll-behavior-y: contain; */
     margin: 0;
     padding: 0;
     height: 100%;
@@ -12,8 +12,8 @@
     user-select: none;
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
       sans-serif;
-    position: fixed;
-    overflow: hidden;
+    /* position: fixed;
+    overflow: hidden; */
   }
   
   /* #root {

@@ -60,7 +60,7 @@
 }
 
 .heroSection__left--searchButton {
-    margin-top: 11%;
+    margin-top: 5%;
     margin-bottom: 12%;
     appearance: none;
   background-color: transparent;
@@ -112,7 +112,7 @@
     /* margin-top: 6%; */
     padding-right: 6%;
     /* background-color: aqua; */
-    width: 16%;
+    width: 23%;
     display: flex;
     flex-direction: row;
     padding-bottom: 2%;

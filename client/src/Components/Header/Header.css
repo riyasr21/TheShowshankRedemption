@@ -5,6 +5,7 @@
   }
 .HeaderWrapper {
     background-color: #F2F2F0;
+    position: sticky;
    
 }
 .HeaderWrapper__menu {
