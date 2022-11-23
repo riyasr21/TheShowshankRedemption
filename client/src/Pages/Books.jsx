@@ -1,11 +1,19 @@
 import React, { useEffect ,  useState } from 'react'
 import Header from '../Components/Header/Header';
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import "../style.css";
+import shawshankRedemption from '../Assets/Img/moviePoster1.png'
+import attackOnTitan from '../Assets/Img/animePoster1.png'
 
 
 const Books = () => {
+    const navigate = useNavigate();
+const navigateToShows = () => {
+    
+    navigate('/shows');
+  };
 
     const [books, setBooks] = useState([])
     useEffect(() => {
@@ -35,16 +43,46 @@ const Books = () => {
 
   return (
     
-    <div className='heroSection'>
+    <div className='landingPage'>
         <Header/>
+        <div className='heroSection'>
         <div className="heroSection__left">
             <div className="heroSection__left--green">
                 A SIMPLE WEBSITE
             </div>
 
             <div className="heroSection__left--text">
-                <b>Finding movies and shows made easier</b>
+                <b>Finding movies and shows made easier.</b>
             </div>
+            <div className="heroSection__left--textGrey">
+                <b>Your solution to decide what to watch next.</b>
+            </div>
+
+            <button className="heroSection__left--searchButton" onClick={navigateToShows}>READY TO WATCH?</button>
+            
+
+        </div>
+
+        <div className="heroSection__right">
+            
+                <div className="heroSection__right--img1">
+                    <img src= {shawshankRedemption} alt='The Shawshank Redemption Poster'/>
+                    <div className="heroSection__right--img1--whiteBg">
+                    <div className="heroSection__right--lines">
+                        
+                    </div>
+                   
+                </div>
+
+                </div>
+                
+                <div className="heroSection__right--img2">
+                <img src= {attackOnTitan} alt='Attack on Titan Poster'/>
+                <div className="heroSection__right--img2--whiteBg"></div>
+                
+                </div>
+                
+            
         </div>
         {/* <h1>Book Shop</h1>
     <div className="books">
@@ -63,6 +101,7 @@ const Books = () => {
     </div>
     <button><Link to="/add">Add new book</Link></button> */}
     </div>
+   </div>
   )
 }
 
