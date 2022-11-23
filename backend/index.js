@@ -107,14 +107,14 @@ app.get("/books/:type/:genre/:platform", (req, res) => {
   var que="";
   if(platform=='Hotstar')
   {
-  que = "SELECT * FROM titlesH where type = ? and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ?  LIMIT 100";
+  que = "SELECT * FROM titlesH where type = ? and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ?  LIMIT 10";
   } 
   else if (platform == 'Prime') {
-  que = "SELECT * FROM titlesP where type = ? and genres1= ?  or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ? limit 100";
+  que = "SELECT * FROM titlesP where type = ? and genres1= ?  or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ? limit 10";
   }
   else if(platform=='Netflix')
   {
-  que = "select * from titlesN where type = ? and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ?  limit 100";
+  que = "select * from titlesN where type = ? and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ?  limit 10";
   }
   db.query(que, [values[0],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1]],(err, data) => {
     if (err) {
