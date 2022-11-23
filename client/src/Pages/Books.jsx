@@ -1,7 +1,11 @@
 import React, { useEffect ,  useState } from 'react'
+import Header from '../Components/Header/Header';
+import Footer from '../Components/Footer/Footer';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import "../style.css";
+import shawshankRedemption from '../Assets/Img/moviePoster1.jpeg'
+import attackOnTitan from '../Assets/Img/animePoster1.jpeg'
 
 
 const Books = () => {
@@ -33,7 +37,42 @@ const Books = () => {
     }
 
   return (
-    <div><h1>Book Shop</h1>
+    
+    <div className='landingPage' >
+        <Header/>
+        <div className='heroSection'>
+        <div className="heroSection__left">
+            <div className="heroSection__left--green">
+                A SIMPLE WEBSITE
+            </div>
+
+            <div className="heroSection__left--text">
+                <b>Finding movies and shows made easier.</b>
+            </div>
+        </div>
+
+        <div className="heroSection__right">
+            
+                <div className="heroSection__right--img1">
+                    <img src= {shawshankRedemption} alt='The Shawshank Redemption Poster'/>
+                    <div className="heroSection__right--img1--whiteBg">
+                   
+                </div>
+
+                </div>
+                
+                <div className="heroSection__right--img2">
+                <img src= {attackOnTitan} alt='Attack on Titan Poster'/>
+                <div className="heroSection__right--img2--whiteBg"></div>
+
+
+
+
+                </div>
+                <div className="heroSection__right--lines"></div>
+            
+        </div>
+        {/* <h1>Book Shop</h1>
     <div className="books">
         {books.map(book => (
             <div className="book" id={book.idbooks} key= {book.idbooks}>
@@ -48,8 +87,10 @@ const Books = () => {
             </div>
         ))}
     </div>
-    <button><Link to="/add">Add new book</Link></button>
+    <button><Link to="/add">Add new book</Link></button> */}
     </div>
+    
+   </div>
   )
 }
 

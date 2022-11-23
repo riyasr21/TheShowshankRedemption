@@ -10,6 +10,8 @@ import {
 import Books from "./Pages/Books";
 import Add from "./Pages/Add";
 import Update from "./Pages/Update";
+import Shows from "./Pages/Shows";
+import Movies from "./Pages/Movies";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Books />} />
           <Route path="/add" element={<Add />} />
+          <Route path="/shows" element={<Shows />} />
+          <Route path="/movies" element={<Movies />} />
           <Route path="/update/:id" element={<Update />} />
         </Routes>
       </BrowserRouter>

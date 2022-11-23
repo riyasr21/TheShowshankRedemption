@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/books", (req, res) => {
-  const que = "SELECT * FROM books";
+  const que = "SELECT * FROM titlesN";
   db.query(que, (err, data) => {
     if (err) {
       return res.json(err);
@@ -32,6 +32,127 @@ app.get("/books", (req, res) => {
     return res.json(data);
   });
 });
+
+app.get("/books/:type/:genre/:platform", (req, res) => {
+  // const type = req.params.type
+  // const genre = req.params.genre
+  const platform = req.params.platform
+  const values = [
+    req.params.type,
+    req.params.genre,
+    
+  ];
+  var que="";
+  if(platform=='Hotstar')
+  {
+  que = "SELECT * FROM titlesH where type = ?  and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ? LIMIT 3";
+  } 
+  else if (platform == 'Prime') {
+  que = "SELECT * FROM titlesP where type = ? and genres1= ?  or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ? limit 3";
+  }
+  else if(platform=='Netflix')
+  {
+  que = "select * from titlesN where type = ? and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ? limit 3";
+  }
+  db.query(que, [values[0], values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1]],(err, data) => {
+    if (err) {
+      return res.json(err);
+    }
+    return res.json(data);
+  });
+});
+
+app.get("/books/:type/:genre/:platform/:year", (req, res) => {
+  // const type = req.params.type
+  // const genre = req.params.genre
+  const platform = req.params.platform
+  const values = [
+    req.params.type,
+    req.params.genre,
+    req.params.year,
+    
+  ];
+
+  var que="";
+  if(platform=='Hotstar')
+  {
+  que = "SELECT * FROM titlesH where type = ? and release_year > ? and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ?  LIMIT 100";
+  } 
+  else if (platform == 'Prime') {
+  que = "SELECT * FROM titlesP where type = ? and release_year > ?  and genres1= ?  or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ? limit 100";
+  }
+  else if(platform=='Netflix')
+  {
+  que = "select * from titlesN where type = ? and release_year > ?  and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ?  limit 100";
+  }
+  db.query(que, [values[0],values[2],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1]],(err, data) => {
+    if (err) {
+      return res.json(err);
+    }
+    return res.json(data);
+  });
+});
+
+app.get("/books/:type/:genre/:platform", (req, res) => {
+  // const type = req.params.type
+  // const genre = req.params.genre
+  const platform = req.params.platform
+  const values = [
+    req.params.type,
+    req.params.genre,
+    
+    
+  ];
+
+  var que="";
+  if(platform=='Hotstar')
+  {
+  que = "SELECT * FROM titlesH where type = ? and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ?  LIMIT 100";
+  } 
+  else if (platform == 'Prime') {
+  que = "SELECT * FROM titlesP where type = ? and genres1= ?  or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ? limit 100";
+  }
+  else if(platform=='Netflix')
+  {
+  que = "select * from titlesN where type = ? and genres1= ? or genres2= ? or genres3= ? or genres4= ? or genres5= ? or genres6= ? or genres7= ? or genres8= ? or genres9= ? or genres10= ?  limit 100";
+  }
+  db.query(que, [values[0],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1],values[1]],(err, data) => {
+    if (err) {
+      return res.json(err);
+    }
+    return res.json(data);
+  });
+});
+app.get("/shows/:type/:platform/:actor", (req, res) => {
+  // const type = req.params.type
+  // const genre = req.params.genre
+  const platform = req.params.platform
+  const values = [
+    req.params.type,
+    req.params.actor,
+    
+  ];
+
+  var que="";
+  if(platform=='Hotstar')
+  {
+  que = "SELECT distinct title,creditsH.name FROM titlesH join creditsH on titlesH.id=creditsH.id where creditsH.name = ?  LIMIT 5";
+  } 
+  else if (platform == 'Prime') {
+  que = "SELECT distinct title,creditsP.name FROM titlesP join creditsP on titlesP.id=creditsP.id where creditsP.name = ? limit 5";
+  }
+  else if(platform=='Netflix')
+  {
+  que = "select distinct title,creditsN.name from titlesN join creditsN on titlesN.id=creditsN.id where creditsN.name = ? limit 5";
+  }
+  db.query(que, [values[1],values[0]],(err, data) => {
+    if (err) {
+      return res.json(err);
+    }
+    return res.json(data);
+  });
+});
+
 
 app.post("/books", (req, res) => {
   const que =

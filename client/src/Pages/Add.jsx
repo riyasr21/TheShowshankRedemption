@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Header from '../Components/Header/Header';
 
 export const Add = () => {
     const [bookDetails, setBookDetails] = useState({
@@ -40,6 +41,7 @@ export const Add = () => {
 
   return (
     <div className="form">
+        <Header/>
         <h1>Add new book</h1>
         <input onChange={handleChange} type="text" placeholder='title' name='title' />
         <input onChange={handleChange} type="text" placeholder='desc' name='desc'/>
