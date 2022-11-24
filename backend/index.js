@@ -32,6 +32,23 @@ app.get("/books", (req, res) => {
     return res.json(data);
   });
 });
+app.post("/shows/:name/:email/:password",(req,res) =>{
+var que="";
+que = "INSERT INTO user (`name`, `email`, `password`) VALUES (?)";
+  const values = [
+    req.params.name,
+    req.params.email,
+    req.params.password,
+  ];
+
+  db.query(que, [values], (err, data) => {
+    if (err) {
+      return res.json(err);
+    }
+    return res.json(data);
+  });
+
+});
 
 app.get("/books/:type/:genre/:platform", (req, res) => {
   // const type = req.params.type

@@ -1,7 +1,138 @@
 * {
     box-sizing: border-box;
+    background-color: #F2F2F0;
+
   }
-  
+.loginsection__left
+{
+  width:50%;
+  font-family: 'raleway';
+  font-family: 'Raleway', sans-serif;
+  margin-top: 10%;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column ;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Name
+{
+ 
+  align-self: flex-start;
+    padding-left: 21%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px
+}
+.Email
+{
+ 
+  align-self: flex-start;
+    padding-left: 21%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px
+}
+.Password
+{
+ 
+  align-self: flex-start;
+    padding-left: 21%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px
+}
+.namedetails
+{
+  align-self: flex-start;
+  padding-left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  gap: 10px
+}
+.emaildetails
+{
+  align-self: flex-start;
+  padding-left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  gap: 10px
+}
+.passworddetails
+{
+  align-self: flex-start;
+  padding-left: 14.4%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px
+}
+.textField
+{
+  padding-left: 21%;
+  width: 40px;
+}
+
+.submit_button {
+  margin-top: 5%;
+  margin-bottom: 15%;
+  appearance: none;
+background-color: transparent;
+border: 3px solid #1A1A1A;
+border-radius: 35px;
+box-sizing: border-box;
+color: #1A1A1A;
+cursor: pointer;
+display: inline-block;
+font-family: 'Raleway', sans-serif ;
+font-size: 16px;
+font-weight: 900;
+line-height: normal;
+letter-spacing: 1.5px;
+
+min-height: 30px;
+min-width: 0;
+outline: none;
+padding: 10px 0;
+text-align: center;
+text-decoration: none;
+transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+width: 150%;
+will-change: transform;
+
+}
+.submit_button:disabled {
+  pointer-events: none;
+}
+
+.submit_button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.submit_button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
   html,
   body {
     /* overscroll-behavior-y: contain; */
@@ -10,8 +141,8 @@
     height: 100%;
     width: 100%;
     user-select: none;
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
-      sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
+      sans-serif; */
     /* position: fixed;
     overflow: hidden; */
   }
