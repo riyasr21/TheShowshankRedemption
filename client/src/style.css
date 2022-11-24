@@ -36,6 +36,8 @@
     font-size: smaller;
     font-weight: bolder;
     letter-spacing: 2px;
+    animation: popup;
+    animation-duration: 800ms;
 }
 .heroSection__left--text {
    

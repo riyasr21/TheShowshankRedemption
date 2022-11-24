@@ -13,10 +13,10 @@ function Movies() {
 
     <div className='app'>
       <Header/>
-      {showAdvanced ? <Advanced /> : <Simple />}
-      <div className='row'>
+      <Advanced /> 
+      {/* <div className='row'>
         <p style={{ color: '#fff' }}>Show advanced example</p> <Switch checked={showAdvanced} onChange={setShowAdvanced} />
-      </div>
+      </div> */}
     </div>
   )
 }
