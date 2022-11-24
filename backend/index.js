@@ -32,9 +32,11 @@ app.get("/books", (req, res) => {
     return res.json(data);
   });
 });
+
 app.post("/shows/:name/:email/:password",(req,res) =>{
 var que="";
 que = "INSERT INTO user (`name`, `email`, `password`) VALUES (?)";
+
   const values = [
     req.params.name,
     req.params.email,
@@ -47,8 +49,50 @@ que = "INSERT INTO user (`name`, `email`, `password`) VALUES (?)";
     }
     return res.json(data);
   });
+  
 
 });
+app.get("/user/:email",(req,res)=>
+{
+  var que1="";
+  const email = req.params.email;
+  let s1 = email;
+  s1 = s1.replace('@','');
+  s1=s1.replace('.','');
+  que1="Create table " + s1 + " (Favourite varchar(255))";
+  
+ 
+  console.log(s1);
+  db.query(que1, (err, data) => {
+    if (err) {
+      return res.json(err);
+    }
+    return res.json(data);
+  });
+});
+
+app.post("/shows/:email/:password", (req, res) => {
+  var que="";
+  const values = [
+    req.params.email,
+    req.params.password,
+  ];
+  db.query("SELECT `name` from user where `email`= ? and `password` = ? ",[values[0],values[1]],
+  (err,result) => {
+    if (err) {
+      return res.json(err);
+    }
+    if(result.length>0)
+    {
+      res.send(result);
+    }
+    else{
+      res.send({message: "Wrong username/password"});
+    }
+  }
+  )
+}
+);
 
 app.get("/books/:type/:genre/:platform", (req, res) => {
   // const type = req.params.type
@@ -109,6 +153,7 @@ app.get("/books/:type/:genre/:platform/:year", (req, res) => {
     return res.json(data);
   });
 });
+
 
 app.get("/books/:type/:genre/:platform", (req, res) => {
   // const type = req.params.type

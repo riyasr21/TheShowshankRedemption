@@ -51,6 +51,12 @@ import '../shows.css'
 // render(<Deck />, document.getElementById('root'))
 
 const Shows = () => {
+  const navigate = useNavigate();
+  const navigateToLogin = () => {
+      
+      navigate('/login');
+    };
+  
   let axiosConfig = {
     headers: {
         'Content-Type': 'application/json;charset=UTF-8',
@@ -88,10 +94,12 @@ const Shows = () => {
   console.log(password);
   
   const signUp = async (name, email, password) => {
-    console.log("//localhost:8800/shows/"+name+"/"+email+"/"+password)
+    
     try {
       await axios.post("//localhost:8800/shows/"+name+"/"+email+"/"+password,axiosConfig)
+      await axios.get("//localhost:8800/user/"+email)
       console.log("done");
+      navigate('/login');
       // const res = await axios.get()
       // setMovies(res.data)
       // setDivShow(true)
@@ -149,6 +157,9 @@ const Shows = () => {
               </div>
               <div classname='SubmitButton'>
               <button className="submit_button" onClick={() => signUp(name, email, password)} >SIGN UP</button>
+              </div>
+              <div className='loginOption'>
+                <h3 onClick={navigateToLogin}>Already a user? Log in here</h3>
               </div>
            </div>
         </div>
