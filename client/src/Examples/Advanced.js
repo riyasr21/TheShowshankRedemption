@@ -3,6 +3,7 @@ import TinderCard from 'react-tinder-card'
 import axios from 'axios'
 import image from '../Assets/Img/moviePoster1.jpeg'
 import anime from '../Assets/Img/animePoster1.jpeg'
+import './Advanced.css'
 
 
 function Advanced () {
@@ -223,7 +224,7 @@ const [currentIndex, setCurrentIndex] = useState(db.length - 1)
         ))}
       </div>}
       { (currentIndexRef.current == -1 && !divShow) &&
-        <button onClick={() => getMovies(message, genre, year, platform)}>READY TO WATCH?</button>
+        <button className="b1" onClick={() => getMovies(message, genre, year, platform)}>READY TO WATCH?</button>
       }
 
       { (divShow) && <div className='moviesDiv' style={divStyle}>{movies.map(movie => (
