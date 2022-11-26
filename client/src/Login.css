@@ -250,3 +250,6 @@ will-change: transform;
   .signInPage__left--loginText{
     cursor: pointer;
   }
+  .signInPage__left--errorTxt{
+    color: red;
+  }

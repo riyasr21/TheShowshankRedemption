@@ -45,7 +45,7 @@ const Login = () => {
       
     };
     console.log(password);
-    const setLoginStatus = useState("");
+    const [loginStatus, setLoginStatus] = useState("");
     const navigate = useNavigate();
     const logIn = async (email, password) => {
         console.log("//localhost:8800/shows"+"/"+email+"/"+password);
@@ -53,6 +53,8 @@ const Login = () => {
           {
              if(response.data.message)
              {
+              console.log(response.data.message)
+
                 setLoginStatus(response.data.message);
              }
              else{
@@ -102,6 +104,10 @@ const Login = () => {
                   <span className='focus-bg'></span>
                 </div>
               </div>
+
+              <div className="signInPage__left--errorMsg">
+              {(loginStatus != "") && <h4 className="signInPage__left--errorTxt">{loginStatus}</h4>}
+                </div>
              
               <button className="signInPage__left--submitButton" onClick={() => logIn( email, password)} >SIGN IN</button>
               
