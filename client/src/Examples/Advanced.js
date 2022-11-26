@@ -1,13 +1,36 @@
 import React, { useState, useMemo, useRef } from "react";
 import TinderCard from "react-tinder-card";
 import axios from "axios";
+import {useNavigate} from 'react-router-dom';
+
 import image from "../Assets/Img/moviePoster1.jpeg";
 import anime from "../Assets/Img/animePoster1.jpeg";
+
 import "./Advanced.css";
 
 function Advanced() {
   // Taking value from the card
+  let axiosConfig = {
+    headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+    }
+  };
+  const url = window.location.href;
+  console.log(url)
+  const myArray = url.split("/");
+  const email = myArray[4]
+  const isFavMap = new Map();
+  const setIsFav = (id) => {
+    isFavMap.set(id, !isFavMap.get(id))  
+  }
+  
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+const navigateToFav = () => {
+    
+            navigate(`/favourites/${email}`);
+  };
 
   const handleChange = (event) => {
     setMessage(event.target.value);
@@ -51,6 +74,57 @@ function Advanced() {
     console.log("value is:", event.target.value);
     // console.log({message});
   };
+  const addFav = async (email, id) => {
+    // console.log("//localhost:8800/shows"+"/"+email+"/"+password);
+    try {
+      axios.post("//localhost:8800/fav/"+email+"/"+id,axiosConfig)
+    } catch(err) {
+      console.log(err)
+
+    }
+  }
+
+  const delFav = async (email, id) => {
+    // console.log("//localhost:8800/shows"+"/"+email+"/"+password);
+    try{
+      await axios.delete("http://localhost:8800/delete/fav/"+email+ "/"+ id)
+      // window.location.reload()
+          
+  } catch(err) {
+      console.log(err)
+  }
+  }
+
+  function MovieCard(props) {
+    
+    return <div
+    className="movie"
+    style={movieStyle}
+    id={props.id}
+    key={props.id}
+  >
+    {/* {book.cover && <img src={book.cover} alt={book.title}/>} */}
+    <h2>{props.title}</h2>
+    <p style={runtimeStyle}>{props.runtime}</p>
+    <p style={runtimeStyle}>{props.release_year}</p>
+    <div className="button">
+<input type="checkbox" className="liked" id={props.id} onChange={() => {
+  
+            setIsFav(props.id);
+            if (isFavMap.get(props.id)) {
+
+              addFav(email,props.id)
+
+            } else{
+              delFav(email, props.id)
+            }}}
+/> <label for={props.id}><span></span></label>
+</div>
+    {/* <button className="delete" onClick={()=> handleDelete(book.idbooks)}>Delete</button>
+      <button className="update"><Link to={`/update/${book.idbooks}`}>Update</Link></button> */}
+  </div>;
+  }
+  
 
   const db = [
     {
@@ -66,7 +140,7 @@ function Advanced() {
       val: actor,
     },
     {
-      name: "Movies after any particular year?",
+      name: "Want to watch something after any particular year?",
       url: anime,
       changes: handleChangeY,
       val: year,
@@ -167,34 +241,89 @@ function Advanced() {
   const [movies, setMovies] = useState([]);
   const [divShow, setDivShow] = useState(false);
 
-  const getMovies = async (message, genre, year, platform) => {
-    console.log(
-      "//localhost:8800/books/" +
-        message +
-        "/" +
-        genre +
-        "/" +
-        platform +
-        "/" +
-        year
-    );
-    try {
-      const res = await axios.get(
-        "//localhost:8800/books/" +
-          message +
-          "/" +
-          genre +
-          "/" +
-          platform +
-          "/" +
-          year
-      );
-      setMovies(res.data);
-      setDivShow(true);
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
+  const getMovies = async (message, genre, year, platform,actor) => {
+    // console.log(
+    //   "//localhost:8800/books/" +
+    //     message +
+    //     "/" +
+    //     genre +
+    //     "/" +
+    //     platform +
+    //     "/" +
+    //     year
+    // );
+    console.log(actor)
+    if (actor === 
+      "") {
+      try {
+      
+        const res = await axios.get(
+          "//localhost:8800/books/" +
+            message +
+            "/" +
+            genre +
+            "/" +
+            platform +
+            "/" +
+            year
+        );
+        // const res2 = await axios.get(
+        //   "//localhost:8800/shows/" +
+        //     message +
+        //     "/" +
+        //     platform +
+        //     "/" +
+        //     actor 
+        // );
+        // console.log(res2.data)
+        setMovies(res.data);
+        
+        setDivShow(true);
+        console.log(res);
+      } catch (err) {
+        console.log(err);
+      }
+
+        
+      } else {
+        try {
+      
+          // const res = await axios.get(
+          //   "//localhost:8800/books/" +
+          //     message +
+          //     "/" +
+          //     genre +
+          //     "/" +
+          //     platform +
+          //     "/" +
+          //     year
+          // );
+          const res2 = await axios.get(
+            "//localhost:8800/shows/" +
+              message +
+              "/" +
+              platform +
+              "/" +
+              actor 
+          );
+          console.log("here")
+          console.log(res2.data)
+          setMovies(res2.data);
+          setDivShow(true);
+          // console.log(res);
+        } catch (err) {
+          console.log(err);
+        }
+        
+      }
+
+      
+
+      movies.map(((movie) => (
+        isFavMap.set(movie.id, false)
+        
+      )))
+    
   };
   console.log("Movies");
   console.log(movies);
@@ -250,7 +379,8 @@ function Advanced() {
               message.toUpperCase(),
               "'".concat(genre.toLowerCase(), "'"),
               year,
-              platform.charAt(0).toUpperCase() + platform.slice(1)
+              platform.charAt(0).toUpperCase() + platform.slice(1).toLowerCase(),
+              actor
             )
           }
         >
@@ -261,19 +391,8 @@ function Advanced() {
       {divShow && (
         <div className="moviesDiv" style={divStyle}>
           {movies.map((movie) => (
-            <div
-              className="movie"
-              style={movieStyle}
-              id={movie.id}
-              key={movie.id}
-            >
-              {/* {book.cover && <img src={book.cover} alt={book.title}/>} */}
-              <h2>{movie.title}</h2>
-              <p style={runtimeStyle}>{movie.runtime}</p>
-              <p style={runtimeStyle}>{movie.release_year}</p>
-              {/* <button className="delete" onClick={()=> handleDelete(book.idbooks)}>Delete</button>
-                <button className="update"><Link to={`/update/${book.idbooks}`}>Update</Link></button> */}
-            </div>
+            <MovieCard id = {movie.id} title = {movie.title} runtime = {movie.runtime} release_year = {movie.release_year}/>
+            
           ))}
         </div>
       )}
@@ -309,6 +428,7 @@ function Advanced() {
         //   Swipe a card or press a button to get Restore Card button visible!
         // </h2>
       )} */}
+      <button className="favouritesButton" onClick={navigateToFav}>GO TO FAVOURITES</button>
     </div>
   );
 }

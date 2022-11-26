@@ -189,7 +189,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox=
 
 }
 
-img {
+.heroSection__right--images {
     width: 200px;
     height: 300px;
     object-fit: cover;

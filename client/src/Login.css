@@ -4,7 +4,7 @@
 
   } */
 
-  .loginPage {
+  .signInPage {
     box-sizing: border-box;
     background-color: #F2F2F0;
     display: flex;
@@ -17,7 +17,7 @@
     position: fixed; top: 11%; left: 0;
     
   }
-.loginPage__left
+.signInPage__left
 {
   width:50%;
   height: 100%;
@@ -30,12 +30,12 @@
   justify-content: flex-start;
   align-items: center;
 }
-.loginPage__left--headingAcc {
+.signInPage__left--headingAcc {
   letter-spacing: 0.2ch;
-  padding-top: 8%;
+  padding-top: 21%;
   
 }
-.loginPage__left--nameDetails
+.signInPage__left--nameDetails
 {
  
   /* align-self: flex-start; */
@@ -47,7 +47,7 @@
     align-items: flex-start;
     gap: 5px
 }
-.loginPage__left--emailDetails
+.signInPage__left--emailDetails
 {
  
   /* align-self: flex-start; */
@@ -59,7 +59,7 @@
     align-items: flex-start;
     gap: 5px
 }
-.loginPage__left--passwordDetails
+.signInPage__left--passwordDetails
 {
  
   /* align-self: flex-start; */
@@ -105,10 +105,10 @@
   padding-left: 21%;
   width: 40px;
 }
-.loginPage__left--button {
+.signInPage__left--button {
   align-self: flex-start;
 }
-.loginPage__left--submitButton {
+.signInPage__left--submitButton {
   /* margin-top: 5%;
   margin-bottom: 15%; */
   appearance: none;
@@ -139,18 +139,18 @@ touch-action: manipulation;
 will-change: transform;
 
 }
-.loginPage__left--submitButton:disabled {
+.signInPage__left--submitButton:disabled {
   pointer-events: none;
 }
 
-.loginPage__left--submitButton:hover {
+.signInPage__left--submitButton:hover {
   color: #fff;
   background-color: #1A1A1A;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-.loginPage__left--submitButton:active {
+.signInPage__left--submitButton:active {
   box-shadow: none;
   transform: translateY(0);
 }
@@ -212,7 +212,7 @@ will-change: transform;
     border-radius: 10px;
     box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
   } */
-  .loginPage__right {
+  .signInPage__right {
     width:50%;
   height: 100%;
   align-self: flex-start;
@@ -226,12 +226,12 @@ will-change: transform;
 
   }
 
-  .loginPage__right--bgImage {
+  .signInPage__right--bgImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .loginPage__left--loginText{
+  .signInPage__left--loginText{
     cursor: pointer;
   }

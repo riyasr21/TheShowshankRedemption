@@ -66,7 +66,7 @@ const navigateToShows = () => {
         <div className="heroSection__right">
             
                 <div className="heroSection__right--img1">
-                    <img src= {shawshankRedemption} alt='The Shawshank Redemption Poster'/>
+                    <img className = "heroSection__right--images" src= {shawshankRedemption} alt='The Shawshank Redemption Poster'/>
                     <div className="heroSection__right--img1--whiteBg">
                     <div className="heroSection__right--lines">
                         
@@ -77,7 +77,7 @@ const navigateToShows = () => {
                 </div>
                 
                 <div className="heroSection__right--img2">
-                <img src= {attackOnTitan} alt='Attack on Titan Poster'/>
+                <img className = "heroSection__right--images" src= {attackOnTitan} alt='Attack on Titan Poster'/>
                 <div className="heroSection__right--img2--whiteBg"></div>
                 
                 </div>

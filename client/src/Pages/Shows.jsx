@@ -1,10 +1,13 @@
 //import React from 'react'
 import Header from '../Components/Header/Header'
 import { render } from 'react-dom'
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
 import React, { useState } from 'react'
 import { useSprings, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
 import '../shows.css'
+import bgImage from "../Assets/Img/loginPageImage.jpeg";
 // const cards = [
 //   'https://n-lightenment.com/wp-content/uploads/2015/10/movie-night11.jpg',
 //   'https://n-lightenment.com/wp-content/uploads/2015/10/movie-night11.jpg',
@@ -47,21 +50,138 @@ import '../shows.css'
 //   ))
 // }
 // render(<Deck />, document.getElementById('root'))
+ 
 const Shows = () => {
+  const navigate = useNavigate();
+  const navigateToLogin = () => {
+      
+      navigate('/login');
+    };
   
+  let axiosConfig = {
+    headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+    }
+  };
+  
+  
+  const [name, setName] = useState('');
+  
+  const handleChange = event => {
+    setName(event.target.value);
+
+    console.log('value is:', event.target.value);
+    // console.log({message});
+    
+  };
+  const [email, setEmail] = useState('');
+  
+
+  const handleChange2 = event => {
+    setEmail(event.target.value);
+
+    console.log('value is:', event.target.value);
+    // console.log({message});
+    
+  };
+  console.log(email);
+  const [password, setPassword] = useState('');
+
+  const handleChange3 = event => {
+    setPassword(event.target.value);
+
+    console.log('value is:', event.target.value);
+    // console.log({message});
+    
+  };
+  console.log(password);
+  
+  const signUp = async (name, email, password) => {
+    
+    try {
+      await axios.post("//localhost:8800/shows/"+name+"/"+email+"/"+password,axiosConfig)
+      await axios.get("//localhost:8800/user/"+email)
+      console.log("done");
+      
+      // console.log(isUser);
+      navigate('/login');
+      // const res = await axios.get()
+      // setMovies(res.data)
+      // setDivShow(true)
+      // console.log(res)
+  } catch(err) {
+      console.log(err)
+  } 
+  }
   return (
     <div>
         <Header/>
         {/* <div className="shows__deck">
-        <Deck/>
-        </div> */}
-        <div className="loginsection_left">
-          <b><h2>Create Account</h2></b>
-        <div className="logincredentials">
-          <h3>Name</h3>
-        </div>
+        <Deck/> */}
+        {/* </div> */}
+        <div className="loginPage">
+          <div className="loginPage__left">
+          <div className="loginPage__left--headingAcc"><h2> Create Account </h2></div>
+          <div className="loginPage__left--nameDetails">
+              <div className="loginPage__left--Name">
+                Name
+              </div>
+            <div className='loginPage__left--nameTextField'>
+              <input id="name"
+                name="name"
+                onChange={handleChange}
+                style={{height: "30px"}}
+                value={name} size="30"></input>
+            </div>
+          </div>
+          <div className="loginPage__left--emailDetails">
+                <div className="loginPage__left--Email">
+                   Email 
+                </div>
+              <div className='loginPage__left--emailTextField'>
+                <input id="email"
+                  name="email"
+                  style={{height: "30px"}}
+                  onChange={handleChange2}
+                  value={email} size="30">
 
-        </div>
+                  </input>
+              </div>
+             </div>
+
+             <div className="loginPage__left--passwordDetails">
+                <div className="loginPage__left--Password">
+                    Password
+                </div>
+                <div className='loginPage__left--passTextField'>
+                  <input id="password"
+                  type = "password"
+                  name="password"
+                  style={{height: "30px"}}
+                  onChange={handleChange3}
+                  value={password} size="30"></input>
+                </div>
+              </div>
+             
+              <button className="loginPage__left--submitButton" onClick={() => signUp(name, email, password)} >SIGN UP</button>
+              
+              <div className='loginPage__left--loginOption'>
+                <h3 onClick={navigateToLogin}>Already a user? <u className="loginPage__left--loginText">Log in here</u></h3>
+              </div>
+           </div>
+           <div className="loginPage__right">
+            <img className="loginPage__right--bgImage" src={bgImage} alt="login page right section" />
+           </div>
+
+
+
+          </div>
+          
+            
+              
+              
+              
         </div>
   )
 }

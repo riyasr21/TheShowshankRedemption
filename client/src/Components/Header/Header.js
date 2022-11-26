@@ -1,10 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink , useLocation} from "react-router-dom";
 import appLogo from "../../Assets/Img/logo.svg";
 import "./Header.css";
 
 export default function Header() {
+  const location = useLocation();
+
   return (
+
     <nav className="HeaderWrapper">
       {/* {dropdown && (
             <a href="/">
@@ -64,8 +67,8 @@ export default function Header() {
             <li className="HeaderWrapper__middle--option">
               <NavLink
                 to="/shows"
-                className={({ isActive }) =>
-                  isActive ? "activePage" : "not-active-class"
+                className={({ isActive}) =>
+                  (isActive || (location.pathname == "/login") || (location.pathname.substring(0,8) == "/movies/") ||  (location.pathname.substring(0,11) == "/favourites") )? "activePage" : "not-active-class"
                 }
               >
                 <div className="arrow-left"></div>
@@ -76,11 +79,11 @@ export default function Header() {
                       alt="snu explore Logo"
                     />
                   )} */}
-                Shows
+                Profile
                 <div className="arrow-right"></div>
               </NavLink>
             </li>
-            <li className="HeaderWrapper__middle--option">
+            {/* <li className="HeaderWrapper__middle--option">
               <NavLink
                 to="/movies"
                 className={({ isActive }) =>
@@ -95,10 +98,10 @@ export default function Header() {
                       alt="snu explore Logo"
                     />
                   )} */}
-                Movies
+                {/* Movies
                 <div className="arrow-right"></div>
               </NavLink>
-            </li>
+            </li> */} 
           </ul>
         </div>
 
