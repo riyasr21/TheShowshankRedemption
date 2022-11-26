@@ -127,7 +127,7 @@ const navigateToFav = () => {
     <ul style={listStyle}>
       <li style={runtimeStyle}><span style={{fontWeight: "bold"}}> Runtime : </span> {props.runtime} minutes</li>
       <li style={runtimeStyle}> <span style={{fontWeight: "bold"}}> Year of Release : </span> {props.release_year}</li>
-      <li style={runtimeStyle}> {props.id}</li>
+      {/* <li style={runtimeStyle}> {props.id}</li> */}
       {/* <li style={runtimeStyle}> {(testMap[props.id] != undefined).toString()} </li> */}
     </ul>
     
