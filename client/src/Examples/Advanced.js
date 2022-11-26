@@ -2,6 +2,8 @@ import React, { useState, useMemo, useRef } from "react";
 import TinderCard from "react-tinder-card";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom';
+import FavoriteBorderIcon from "../Assets/Img/favorite-border.svg";
+import FavoriteFilledIcon from "../Assets/Img/favorite-filled.svg";
 
 import image from "../Assets/Img/moviePoster1.jpeg";
 import anime from "../Assets/Img/animePoster1.jpeg";
@@ -17,12 +19,20 @@ function Advanced() {
     }
   };
   const url = window.location.href;
-  console.log(url)
+  // console.log(url)
   const myArray = url.split("/");
   const email = myArray[4]
-  const isFavMap = new Map();
+  const [isFavMap, setIsFavMap] = useState(new Map());
+  const [testMap, setTestMap] = useState({"test": 123});
   const setIsFav = (id) => {
-    isFavMap.set(id, !isFavMap.get(id))  
+    // isFavMap.set(id, !isFavMap.get(id))  
+    setIsFavMap(isFavMap.set(id, isFavMap.get(id) == undefined ? true : !isFavMap.get(id)))
+    console.log(isFavMap);
+  }
+
+  const isFavIconMap = new Map();
+  const setIsFavIcon = (id) => {
+    setIsFavMap(m => m.set(id, isFavIconMap.get(id) === FavoriteBorderIcon ? FavoriteFilledIcon : FavoriteBorderIcon)  )
   }
   
   const [message, setMessage] = useState("");
@@ -94,6 +104,8 @@ const navigateToFav = () => {
       console.log(err)
   }
   }
+  const [imgSrc, setImgSrc] = useState(FavoriteBorderIcon);
+  // console.log(isFavMap)
 
   function MovieCard(props) {
     
@@ -104,21 +116,45 @@ const navigateToFav = () => {
     key={props.id}
   >
     {/* {book.cover && <img src={book.cover} alt={book.title}/>} */}
-    <h2>{props.title}</h2>
-    <p style={runtimeStyle}>{props.runtime}</p>
-    <p style={runtimeStyle}>{props.release_year}</p>
+    {/* <button onClick={() => {
+      setTestMap(() => {
+        // testMap[props.id] = (testMap[props.id] == undefined) ? true : !testMap[props.id]
+        testMap[props.id] = true;
+      })
+      console.log(testMap);
+    }}> click </button> */}
+    <h2 style={movieTitleStyle}>{props.title}</h2>
+    <ul style={listStyle}>
+      <li style={runtimeStyle}><span style={{fontWeight: "bold"}}> Runtime : </span> {props.runtime} minutes</li>
+      <li style={runtimeStyle}> <span style={{fontWeight: "bold"}}> Year of Release : </span> {props.release_year}</li>
+      <li style={runtimeStyle}> {props.id}</li>
+      {/* <li style={runtimeStyle}> {(testMap[props.id] != undefined).toString()} </li> */}
+    </ul>
+    
     <div className="button">
-<input type="checkbox" className="liked" id={props.id} onChange={() => {
-  
+<button  className="liked" id={props.id} onClick={() => {
+
+            // var temp = isFavMap.get(props.id);
+            // console.log(isFavMap.get(props.id));
+            // if (temp == undefined) {
+            //   isFavMap.set(props.id, false)
+            // }
+            // console.log(isFavMap.get(props.id))
             setIsFav(props.id);
-            if (isFavMap.get(props.id)) {
-
+            console.log(isFavMap.get(props.id));
+            if (isFavMap.get(props.id) == undefined || isFavMap.get(props.id)) {
+              console.log("ccalled");
+              setImgSrc(FavoriteFilledIcon)
               addFav(email,props.id)
-
             } else{
+              setImgSrc(FavoriteBorderIcon)
               delFav(email, props.id)
+              
             }}}
-/> <label for={props.id}><span></span></label>
+><img 
+  src={isFavMap.get(props.id) ? FavoriteFilledIcon : FavoriteBorderIcon} 
+  // src={imgSrc}
+  className = "likeImage"/></button>{/* <label for={props.id}><span></span></label>*/}
 </div>
     {/* <button className="delete" onClick={()=> handleDelete(book.idbooks)}>Delete</button>
       <button className="update"><Link to={`/update/${book.idbooks}`}>Update</Link></button> */}
@@ -216,7 +252,7 @@ const navigateToFav = () => {
   const movieStyle = {
     margin: "20px",
     padding: "20px",
-    width: "500px",
+    width: "250px",
     minHeight: "200px",
     // display: "grid",
     gridTemplateRows: "20px 50px 1fr 50px",
@@ -229,7 +265,29 @@ const navigateToFav = () => {
   const runtimeStyle = {
     fontWeight: "400",
     color: "#000000",
+    fontFamily : "'Raleway', sans-serif",
+    textAlign : "left",
+    marginBottom : "3px"
+
+    
   };
+
+  const movieTitleStyle = {
+    fontFamily : "'Raleway', sans-serif",
+    letterSpacing: "1.8px",
+    borderBottom: "1px dashed rgb(204, 242, 121)",
+    paddingBottom : "10px",
+    margin : "0",
+    maxHeight : "115px"
+    
+  }
+
+  const listStyle = {
+    margin: "15px 0",
+    paddingLeft: "30px",
+    lineHeight: "1.5rem",
+    listStyleType: "square",
+  }
 
   // increase current index and show card
   const goBack = async () => {
@@ -320,13 +378,13 @@ const navigateToFav = () => {
       
 
       movies.map(((movie) => (
-        isFavMap.set(movie.id, false)
+        setIsFavMap(m => m.set(movie.id, false))
         
       )))
     
   };
-  console.log("Movies");
-  console.log(movies);
+  // console.log("Movies");
+  // console.log(movies);
 
   return (
     <div>
@@ -339,6 +397,7 @@ const navigateToFav = () => {
         rel="stylesheet"
       />
       <h1 className="infoText">Make your choice</h1>
+      
       {!divShow && currentIndexRef.current != -1 && (
         <div className="cardContainer">
           {db.map((character, index) => (
@@ -388,10 +447,32 @@ const navigateToFav = () => {
         </button>
       )}
 
+        {/* <button
+          className="b1"
+          onClick={() =>
+            getMovies(
+              "SHOW",
+              "'action'",
+              2010,
+              // platform.charAt(0).toUpperCase() + platform.slice(1).toLowerCase(),
+              "Netflix",
+              ""
+            )
+          }
+        >
+          Sample responses
+        </button> */}
+
       {divShow && (
         <div className="moviesDiv" style={divStyle}>
           {movies.map((movie) => (
-            <MovieCard id = {movie.id} title = {movie.title} runtime = {movie.runtime} release_year = {movie.release_year}/>
+            <MovieCard 
+              id = {movie.id} 
+              title = {movie.title} 
+              runtime = {movie.runtime} 
+              release_year = {movie.release_year}
+              key={movie.id}
+            />
             
           ))}
         </div>

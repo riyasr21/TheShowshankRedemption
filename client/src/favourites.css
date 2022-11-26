@@ -1,0 +1,19 @@
+.favPage {
+    box-sizing: border-box;
+    background-color: #F2F2F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* padding: 3%; */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* position: fixed; top: 10%; left: 0; */
+    
+    
+  }
+  .deleteImage {
+    padding-top: 2px;
+    width: 23px;
+    height: 23px;;
+  }

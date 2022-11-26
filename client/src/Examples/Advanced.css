@@ -99,14 +99,33 @@
 .card__formField:focus ~ .focus-border i:before,
 .card__formField:focus ~ .focus-border i:after{height: 100%; transition: 0.2s;}
 .card__formField:focus ~ .focus-border i:after{transition-delay: 0.4s;}
-
-.button {
+.movie {
   position: relative;
-    width: calc(var(--u) * 10);
-    height: calc(var(--u) * 10);
+  
+}
+.button {
+  position: absolute;
+  bottom: 20px;
+  min-width: 250px;
+  margin-top: 35px;
+    min-height: 32px;
+    background-color: rgb(121 133 242 / 70%);
+    border-radius: 5px;
 }
 
 /* .liked { display: none; }   */
+
+.liked {
+  background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+
+
 
 label {
     background: var(--bg);
@@ -293,7 +312,7 @@ label span:before,  label span:after {
 }
 
 .favouritesButton {
-  
+  margin-top: 1%;
   margin-bottom: 12%;
   appearance: none;
 background-color: transparent;
@@ -337,4 +356,9 @@ will-change: transform;
 .favouritesButton:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+.likeImage {
+  width: 26px;
+  height: 26px;;
 }
