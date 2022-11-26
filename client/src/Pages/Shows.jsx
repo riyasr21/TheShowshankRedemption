@@ -130,9 +130,11 @@ const Shows = () => {
             <div className='loginPage__left--nameTextField'>
               <input id="name"
                 name="name"
+                className='loginPage__left--nameTextInput'
                 onChange={handleChange}
                 style={{height: "30px"}}
                 value={name} size="30"></input>
+                <span class="focus-bg"></span>
             </div>
           </div>
           <div className="loginPage__left--emailDetails">
@@ -142,6 +144,7 @@ const Shows = () => {
               <div className='loginPage__left--emailTextField'>
                 <input id="email"
                   name="email"
+                  className='loginPage__left--emailTextInput'
                   style={{height: "30px"}}
                   onChange={handleChange2}
                   value={email} size="30">
@@ -158,9 +161,11 @@ const Shows = () => {
                   <input id="password"
                   type = "password"
                   name="password"
+                  className='loginPage__left--passTextInput'
                   style={{height: "30px"}}
                   onChange={handleChange3}
                   value={password} size="30"></input>
+                   <span class="focus-bg"></span>
                 </div>
               </div>
              

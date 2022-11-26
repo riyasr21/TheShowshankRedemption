@@ -104,3 +104,8 @@ background-color: #F2F2F0;
     font-size: larger;
     font-weight: 900;
   }
+
+  .HeaderWrapper__right--titleTag {
+    all: unset;
+    cursor: pointer;
+  }

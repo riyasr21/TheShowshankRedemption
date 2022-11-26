@@ -59,6 +59,21 @@
     align-items: flex-start;
     gap: 5px
 }
+.signInPage__left--emailTextInput{
+  background: transparent;
+}
+.signInPage__left--passTextInput{
+  background: transparent;
+}
+.signInPage__left--passTextInput ~ .focus-bg:before,
+.signInPage__left--passTextInput ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.signInPage__left--passTextInput:focus ~ .focus-bg:before,
+.has-content.signInPage__left--passTextInput ~ .focus-bg:before{transition: 0.3s; width: 50%; height: 100%;}
+.signInPage__left--passTextInput ~ .focus-bg:after{left: auto; right: 0; top: auto; bottom: 0;}
+.signInPage__left--passTextInput:focus ~ .focus-bg:after,
+.has-content.signInPage__left--passTextInput ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%;}
+.signInPage__left--passTextInput ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.signInPage__left--passTextInput:focus ~ label, .has-content.signInPage__left--nameTextInput ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
 .signInPage__left--passwordDetails
 {
  

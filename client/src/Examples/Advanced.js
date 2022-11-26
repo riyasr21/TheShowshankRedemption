@@ -396,7 +396,8 @@ const navigateToFav = () => {
         href="https://fonts.googleapis.com/css?family=Alatsi&display=swap"
         rel="stylesheet"
       />
-      <h1 className="infoText">Make your choice</h1>
+      <h1 className="infoTitle">Make your choice</h1>
+      <h3 className="infoDesc">Enter your preferences and swipe the card</h3>
       
       {!divShow && currentIndexRef.current != -1 && (
         <div className="cardContainer">

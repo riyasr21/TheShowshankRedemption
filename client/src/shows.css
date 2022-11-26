@@ -47,6 +47,33 @@
     align-items: flex-start;
     gap: 5px
 }
+.loginPage__left--nameTextInput{
+  background: transparent;
+}
+.loginPage__left--passTextInput{
+  background: transparent;
+}
+.loginPage__left--emailTextInput{
+  background: transparent;
+}
+.loginPage__left--nameTextInput ~ .focus-bg:before,
+.loginPage__left--nameTextInput ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.loginPage__left--nameTextInput:focus ~ .focus-bg:before,
+.has-content.loginPage__left--nameTextInput ~ .focus-bg:before{transition: 0.3s; width: 50%; height: 100%;}
+.loginPage__left--nameTextInput ~ .focus-bg:after{left: auto; right: 0; top: auto; bottom: 0;}
+.loginPage__left--nameTextInput:focus ~ .focus-bg:after,
+.has-content.loginPage__left--nameTextInput ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%;}
+.loginPage__left--nameTextInput ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.loginPage__left--nameTextInput:focus ~ label, .has-content.loginPage__left--nameTextInput ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
+.loginPage__left--passTextInput ~ .focus-bg:before,
+.loginPage__left--passTextInput ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.loginPage__left--passTextInput:focus ~ .focus-bg:before,
+.has-content.loginPage__left--passTextInput ~ .focus-bg:before{transition: 0.3s; width: 50%; height: 100%;}
+.loginPage__left--passTextInput ~ .focus-bg:after{left: auto; right: 0; top: auto; bottom: 0;}
+.loginPage__left--passTextInput:focus ~ .focus-bg:after,
+.has-content.loginPage__left--passTextInput ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%;}
+.loginPage__left--passTextInput ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.loginPage__left--passTextInput:focus ~ label, .has-content.loginPage__left--passTextInput ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
 .loginPage__left--emailDetails
 {
  

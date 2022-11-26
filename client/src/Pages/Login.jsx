@@ -65,54 +65,11 @@ const Login = () => {
     return (
         <div>
             <Header/>
-            {/* <div className="loginsection__left">
-          <h2><div className="text1"> Sign In </div></h2>
-              <div className="emaildetails">
-                <div className="Email">
-                   Email 
-                </div>
-              <div className='textField'>
-                <input id="email"
-                  name="email"
-                  style={{height: "30px"}}
-                  onChange={handleChange2}
-                  value={email} size="30">
-
-                  </input>
-              </div>
-             </div>
-              <div className="passworddetails">
-                <div className="Password">
-                    Password
-                </div>
-                <div className='textField'>
-                  <input id="password"
-                  type = "password"
-                  name="password"
-                  style={{height: "30px"}}
-                  onChange={handleChange3}
-                  value={password} size="30"></input>
-                </div>
-              </div>
-              <div classname='SubmitButton'>
-              <button className="submit_button" onClick={() => logIn(email, password)}  >SIGN IN</button>
-              </div>
-              
-           </div>*/}
+           
            <div className="signInPage">
           <div className="signInPage__left">
           <div className="signInPage__left--headingAcc"><h2> Sign In </h2></div>
-          {/* <div className="signInPage__left--nameDetails">
-              <div className="signInPage__left--Name">
-                Name
-              </div>
-            <div className='signInPage__left--nameTextField'>
-              <input id="name"
-                name="name"
-                onChange={handleChange}
-                style={{height: "30px"}}
-                value={name} size="30"></input>
-            </div> */}
+         
           
           <div className="signInPage__left--emailDetails">
                 <div className="signInPage__left--Email">
@@ -121,6 +78,7 @@ const Login = () => {
               <div className='signInPage__left--emailTextField'>
                 <input id="email"
                   name="email"
+                  className='signInPage__left--emailTextInput'
                   style={{height: "30px"}}
                   onChange={handleChange2}
                   value={email} size="30">
@@ -137,9 +95,11 @@ const Login = () => {
                   <input id="password"
                   type = "password"
                   name="password"
+                  className='signInPage__left--passTextInput'
                   style={{height: "30px"}}
                   onChange={handleChange3}
                   value={password} size="30"></input>
+                  <span className='focus-bg'></span>
                 </div>
               </div>
              
