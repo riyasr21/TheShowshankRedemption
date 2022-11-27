@@ -512,6 +512,7 @@ const navigateToFav = () => {
         // </h2>
       )} */}
       <button className="favouritesButton" onClick={navigateToFav}>GO TO FAVOURITES</button>
+      {/* <Footer href1={"/"} href2 = {"/favourites/" + email} text2 = "Favourites" text1= "Home"/> */}
     </div>
   );
 }

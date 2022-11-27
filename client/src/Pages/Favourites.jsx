@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import Header from '../Components/Header/Header'
 import FavoriteBorderIcon from "../Assets/Img/favorite-border.svg";
-import FavoriteFilledIcon from "../Assets/Img/favorite-filled.svg";
+import Footer from '../Components/Footer/Footer';
 import DeleteIcon from "../Assets/Img/deleteIcon.svg"
 import { useState, useEffect } from 'react';
 import '../favourites.css'
@@ -58,8 +58,12 @@ function Favourites() {
   }
 
   
-
+console.log("Favs")
   console.log(favs);
+
+  if (favs.length == 0) {
+    
+  }
 
   const getFavDetails = async (emailId, id) => {
     try {
@@ -86,6 +90,7 @@ function Favourites() {
     flexWrap: "wrap",
     gap: "12px",
     justifyContent: "center",
+    
   };
 
   const movieStyle = {
@@ -187,7 +192,10 @@ function Favourites() {
         <div className="favPage">
           <div className="favPageContainer">
           <h1 className="infoText">Your Favourites</h1>
-        <div className="favsDiv" style={divStyle}>
+          {favs.length === 0 && (<h2 className="infoT"> You don't have any favourites yet</h2>)}
+        {favs.length != 0 && <div className="favsDiv" style={divStyle}>
+        
+        
         {favs.map((movie) => (
             <MovieCard 
               id = {movie.Favourite} 
@@ -198,14 +206,14 @@ function Favourites() {
             />
             
           ))}
-        </div>
+        </div>}
 
           </div>
         
 
-
+          
         </div>
-
+        {/* <Footer href1={"/"} href2 = {"/movies/" + email} text1 = "Home" text2= "Search Movies"/> */}
         </div>
   )
 }

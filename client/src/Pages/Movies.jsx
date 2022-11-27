@@ -1,5 +1,6 @@
 import Header from '../Components/Header/Header'
 import React from 'react'
+import Footer from '../Components/Footer/Footer'
 import '../movies.css'
 import Switch from 'react-ios-switch'
 import axios from 'axios';
@@ -37,6 +38,7 @@ function Movies() {
       {/* <div className='row'>
         <p style={{ color: '#fff' }}>Show advanced example</p> <Switch checked={showAdvanced} onChange={setShowAdvanced} />
       </div> */}
+      {/* <Footer href1={"/favourites/" + email} href2 = {"/movies/" + email} text1 = "Favourites" text2= "Search Movies"/> */}
     </div>
   )
 }

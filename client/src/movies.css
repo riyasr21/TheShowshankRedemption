@@ -2,7 +2,7 @@
     text-align: center;
     /* display: flex; */
     justify-content: center;
-    width: 100vw;
+    /* width: 100vw; */
     min-height: 100vh;
     overflow: hidden;
     /* background: linear-gradient(#fff, #999); */
@@ -24,20 +24,9 @@
     overflow: hidden;
   }
   
-  .app>div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
   
-  .row {
-    flex-direction: row !important;
-  }
   
-  .row>* {
-    margin: 5px;
-  }
+  
   
   h1 {
     font-family: 'Raleway', sans-serif;

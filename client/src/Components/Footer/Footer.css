@@ -5,6 +5,8 @@
   height: 120px;
   width: 100%;
   background:black;
+  
+  /* bottom: 0; */
 }
 @font-face {
   font-family: 'Wade-sans';
@@ -74,7 +76,13 @@
   .FooterWrapper__middle--anchorTag {
     all : unset;
     color: white;
-    font-family : 'Raleway', sans-serif
+    font-family : 'Raleway', sans-serif;
+    cursor: pointer;
+
+  }
+  .FooterWrapper__middle--anchorTag:hover {
+    color: #CCF279;
+    font-weight: bold;
   }
 .FooterWrapper__left--logo {
   padding: 20px ;
@@ -85,7 +93,13 @@
 width: 47px;
 height: 47px;
 filter: brightness(0) saturate(100%) invert(99%) sepia(51%) saturate(0%) hue-rotate(24deg) brightness(106%) contrast(100%);
+transition: all ease-in;
+-webkit-transition : -webkit-filter 200ms linear
 /* background-color: #F2F2F0; */
+  }
+
+  .FooterWrapper__left--logoImg:hover {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(95%) saturate(313%) hue-rotate(22deg) brightness(105%) contrast(90%);
   }
   .FooterWrapper__right--title {
     
@@ -96,12 +110,17 @@ filter: brightness(0) saturate(100%) invert(99%) sepia(51%) saturate(0%) hue-rot
     font-weight: 900;
     color : white;
     padding-right: 50px;
+    /* transition: all ease-in 0.5s; */
 
   }
 
   .FooterWrapper__right--titleTag {
     all: unset;
     cursor : pointer;
+  }
+  .FooterWrapper__right--titleTag:hover {
+    font-size: x-large;
+
   }
  
   /* .FooterWrapper__left--logo {
