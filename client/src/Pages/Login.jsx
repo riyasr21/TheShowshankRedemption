@@ -5,7 +5,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useSprings, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
-import '../login.css';
+import '../Login.css';
 import bgImage from "../Assets/Img/loginPageImage.jpeg";
 
 const Login = () => {

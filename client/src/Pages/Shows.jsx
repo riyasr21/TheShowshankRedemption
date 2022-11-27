@@ -1,5 +1,6 @@
 //import React from 'react'
 import Header from '../Components/Header/Header'
+import Footer from '../Components/Footer/Footer';
 import { render } from 'react-dom'
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
@@ -184,7 +185,7 @@ const Shows = () => {
           </div>
           
             
-              
+              <Footer href1="/shows" href2 = "/login" text1 = "Sign Up" text2 = "Log In"/>
               
               
         </div>

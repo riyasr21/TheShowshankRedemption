@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import "../style.css";
 import shawshankRedemption from '../Assets/Img/moviePoster1.png'
 import attackOnTitan from '../Assets/Img/animePoster1.png'
+import Footer from '../Components/Footer/Footer';
 
 
 const Books = () => {
@@ -101,6 +102,7 @@ const navigateToShows = () => {
     </div>
     <button><Link to="/add">Add new book</Link></button> */}
     </div>
+    <Footer href1="/shows" href2 = "/login" text1 = "Sign Up" text2 = "Log In"/>
    </div>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState, useMemo, useRef } from "react";
 import TinderCard from "react-tinder-card";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom';
+import Footer from '../Components/Footer/Footer';
 import FavoriteBorderIcon from "../Assets/Img/favorite-border.svg";
 import FavoriteFilledIcon from "../Assets/Img/favorite-filled.svg";
 
