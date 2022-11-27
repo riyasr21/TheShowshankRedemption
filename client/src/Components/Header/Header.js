@@ -68,7 +68,7 @@ export default function Header() {
               <NavLink
                 to="/shows"
                 className={({ isActive}) =>
-                  (isActive || (location.pathname == "/login") || (location.pathname.substring(0,8) == "/movies/") ||  (location.pathname.substring(0,11) == "/favourites") )? "activePage" : "not-active-class"
+                  (isActive  || (location.pathname.substring(0,8) == "/movies/") ||  (location.pathname.substring(0,11) == "/favourites") )? "activePage" : "not-active-class"
                 }
               >
                 <div className="arrow-left"></div>
@@ -77,7 +77,19 @@ export default function Header() {
                 <div className="arrow-right"></div>
               </NavLink>
             </li>
-            
+            <li className="HeaderWrapper__middle--option">
+              <NavLink
+                to="/login"
+                className={({ isActive}) =>
+                  (isActive  )? "activePage" : "not-active-class"
+                }
+              >
+                <div className="arrow-left"></div>
+                
+                Log In
+                <div className="arrow-right"></div>
+              </NavLink>
+            </li>
           </ul>
         </div>
 
