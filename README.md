@@ -30,13 +30,13 @@ npm start
    
 Open up [http://localhost:3000](http://localhost:3000) to go to the website.
 
-And, to connect it to your MySQL database, go to the index.js file in the backend folder and make the required changes in the database connnection function that starts from line 12. 
+And, to connect it to your MySQL database, go to the index.js file in the backend folder and make the required changes in the database connection function that starts from line 12. 
 
 ```sh
 const db = mysql.createConnection({
   host: "localhost",
-  user: "root", // Enter the name you have given to your user here
-  password: "*****", // Enter your password here
+  user: "root", // Enter the name you have given to your user for SQL here 
+  password: "*****", // Enter your MySQL password here
   database: "mern_db", // All our tables for this project were in the mern_db database created by us. You can change it to what your database name is.
 });
 ```
