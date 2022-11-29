@@ -1,0 +1,264 @@
+/* * {
+    box-sizing: border-box;
+    background-color: #F2F2F0;
+
+  } */
+
+  .loginPage {
+    box-sizing: border-box;
+    background-color: #F2F2F0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* padding: 3%; */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    top: 11%; left: 0;
+    position: fixed;
+  }
+.loginPage__left
+{
+  width:50%;
+  height: 100%;
+  align-self: flex-start;
+  font-family: 'Raleway', sans-serif;
+  gap: 13px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column ;
+  justify-content: flex-start;
+  align-items: center;
+}
+.loginPage__left--headingAcc {
+  letter-spacing: 0.2ch;
+  padding-top: 8%;
+  
+}
+.loginPage__left--nameDetails
+{
+ 
+  /* align-self: flex-start; */
+    /* padding-left: 21%; */
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px
+}
+.loginPage__left--nameTextInput{
+  background: transparent;
+}
+.loginPage__left--passTextInput{
+  background: transparent;
+}
+.loginPage__left--emailTextInput{
+  background: transparent;
+}
+.loginPage__left--nameTextInput ~ .focus-bg:before,
+.loginPage__left--nameTextInput ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.loginPage__left--nameTextInput:focus ~ .focus-bg:before,
+.has-content.loginPage__left--nameTextInput ~ .focus-bg:before{transition: 0.3s; width: 50%; height: 100%;}
+.loginPage__left--nameTextInput ~ .focus-bg:after{left: auto; right: 0; top: auto; bottom: 0;}
+.loginPage__left--nameTextInput:focus ~ .focus-bg:after,
+.has-content.loginPage__left--nameTextInput ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%;}
+.loginPage__left--nameTextInput ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.loginPage__left--nameTextInput:focus ~ label, .has-content.loginPage__left--nameTextInput ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
+.loginPage__left--passTextInput ~ .focus-bg:before,
+.loginPage__left--passTextInput ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.loginPage__left--passTextInput:focus ~ .focus-bg:before,
+.has-content.loginPage__left--passTextInput ~ .focus-bg:before{transition: 0.3s; width: 50%; height: 100%;}
+.loginPage__left--passTextInput ~ .focus-bg:after{left: auto; right: 0; top: auto; bottom: 0;}
+.loginPage__left--passTextInput:focus ~ .focus-bg:after,
+.has-content.loginPage__left--passTextInput ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%;}
+.loginPage__left--passTextInput ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.loginPage__left--passTextInput:focus ~ label, .has-content.loginPage__left--passTextInput ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
+.loginPage__left--emailDetails
+{
+ 
+  /* align-self: flex-start; */
+    /* padding-left: 21%; */
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px
+}
+.loginPage__left--passwordDetails
+{
+ 
+  /* align-self: flex-start; */
+    /* padding-left: 21%; */
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px
+}
+.namedetails
+{
+  align-self: flex-start;
+  padding-left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  gap: 10px
+}
+.emaildetails
+{
+  align-self: flex-start;
+  padding-left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  gap: 10px
+}
+.passworddetails
+{
+  align-self: flex-start;
+  padding-left: 14.4%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px
+}
+.textField
+{
+  padding-left: 21%;
+  width: 40px;
+}
+.loginPage__left--button {
+  align-self: flex-start;
+}
+.loginPage__left--submitButton {
+  /* margin-top: 5%;
+  margin-bottom: 15%; */
+  appearance: none;
+background-color: transparent;
+border: 3px solid #1A1A1A;
+border-radius: 35px;
+box-sizing: border-box;
+color: #1A1A1A;
+cursor: pointer;
+display: inline-block;
+font-family: 'Raleway', sans-serif ;
+font-size: 16px;
+font-weight: 900;
+line-height: normal;
+letter-spacing: 1.5px;
+
+min-height: 30px;
+min-width: 0;
+outline: none;
+padding: 8px 15px;
+text-align: center;
+text-decoration: none;
+transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+/* width: 150%; */
+will-change: transform;
+
+}
+.loginPage__left--submitButton:disabled {
+  pointer-events: none;
+}
+
+.loginPage__left--submitButton:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.loginPage__left--submitButton:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+  /* html,
+  body {
+    /* overscroll-behavior-y: contain; */
+    /* margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    user-select: none; */
+    /* font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
+      sans-serif; */
+    /* position: fixed;
+    overflow: hidden; */
+  /* } */
+   
+  /* #root {
+    background: lightblue;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    /* cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39, auto; */
+  /* .shows__deck { */
+        
+        /* position: fixed; */
+        /* overflow: hidden; */
+        /* width: 100%; */
+        /* height: 100%; */
+        /* cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39, auto; */
+      
+    /* } */
+      
+
+  /* .shows__deck {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2F2F0;
+    ;
+  } */
+  
+  /* .shows__deck > div > div {
+    background-color: white;
+    background-size: auto 85%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 45vh;
+    max-width: 300px;
+    height: 85vh;
+    max-height: 570px;
+    will-change: transform;
+    border-radius: 10px;
+    box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  } */
+  .loginPage__right {
+    width:50%;
+  height: 100%;
+  align-self: flex-start;
+  font-family: 'Raleway', sans-serif;
+  gap: 13px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column ;
+  justify-content: flex-start;
+  align-items: center;
+
+  }
+
+  .loginPage__right--bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .loginPage__left--loginText{
+    cursor: pointer;
+  }

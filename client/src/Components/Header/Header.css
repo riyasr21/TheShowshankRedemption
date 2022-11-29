@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');@import url("https://www.dafontfree.net/embed/d2FkZS1zYW5zLWxpZ2h0LXJlZ3VsYXImZGF0YS80OS93LzM5Mzg1L1dhZGUgU2FucyBMaWdodCBQbGFpbi50dGY");
+@font-face {
+    font-family: 'Wade-sans';
+    src: local('Wade-sans'), url(../../Assets/Fonts/WadeSansLightPlain.ttf) format('truetype');
+  }
+.HeaderWrapper {
+    background-color: #F2F2F0;
+    position: sticky;
+   
+}
+.HeaderWrapper__menu {
+   
+    
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 1%;
+    justify-content: space-around;
+
+}
+.HeaderWrapper__left {
+    
+    padding: 10px 5px 5px 20px ;
+    display: inline;
+}
+.HeaderWrapper__left--logo {
+display: inline;
+width: 47px;
+height: 47px;
+background-color: #F2F2F0;
+    
+}
+.HeaderWrapper__middle {
+    
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HeaderWrapper__middle ul {
+    padding-left: 30%;
+    
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    
+    
+}
+.HeaderWrapper__middle--option {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+.HeaderWrapper__middle--option a{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #595959;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    
+}
+.HeaderWrapper__middle--option .activePage{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bolder;
+    padding: 5px 5px;
+    background-color: #F2F2F0;
+    opacity: 0.8;
+    /* background-image: radial-gradient(#CCF279 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px;; */
+}
+.HeaderWrapper__middle--option .activePage .arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    
+    border-left: 8px solid #a9f700;
+  }
+  
+  .HeaderWrapper__middle--option .activePage .arrow-left {
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; 
+   
+    border-right:8px solid #a9f700; 
+  }
+
+  .HeaderWrapper__right--title {
+    padding-right: 20px;
+    letter-spacing: 5px;
+    font-family: 'Wade-sans', sans-serif;
+    align-self: center;
+    font-size: larger;
+    font-weight: 900;
+  }
+
+  .HeaderWrapper__right--titleTag {
+    all: unset;
+    cursor: pointer;
+  }

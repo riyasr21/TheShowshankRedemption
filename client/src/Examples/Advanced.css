@@ -1,0 +1,381 @@
+.b1
+{
+  margin-top: 5%;
+  
+  appearance: none;
+  background-color: transparent;
+  border: 3px solid #1A1A1A;
+  border-radius: 35px;
+  box-sizing: border-box;
+  color: #1A1A1A;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif ;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 2px;
+  
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 20%;
+  will-change: transform;
+ 
+}
+.b1:disabled {
+    pointer-events: none;
+  }
+  
+  .b1:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .b1:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  .card__textDisplayed {
+    padding-left: 8%;
+  }
+
+  .card__formField {
+    font-family: 'Raleway', sans-serif;
+    width: 50%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    /* transition: border-image s; */
+    padding: 7px 14px 9px;
+    
+  
+    
+  
+    
+  }
+
+  /* .card__formField::placeholder {
+    color: transparent;
+  }
+   */
+  
+  .card__formField:focus {
+    
+    
+    /* border: 1px solid #ccc; padding: 7px 14px 9px; transition: 0.4s; */
+    
+    border-width: 3px;
+    /* border-image: linear-gradient(to right, grey,white);  */
+    border-image-slice: 1; 
+  }
+  /* reset input */
+  
+  .card__formField:required,.card__formField:invalid { box-shadow:none; }
+  
+  .card__formField ~ .focus-border:before,
+.card__formField ~ .focus-border:after{content: ""; position: absolute; top: 0; right: 0; width: 0; height: 2px; background-color: #1A1A1A; transition: 0.2s; transition-delay: 0.2s;}
+.card__formField ~ .focus-border:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
+.card__formField ~ .focus-border i:before,
+.card__formField ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #1A1A1A; transition: 0.2s;}
+.card__formField ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0; transition-delay: 0.4s;}
+.card__formField:focus ~ .focus-border:before,
+.card__formField:focus ~ .focus-border:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
+.card__formField:focus ~ .focus-border:after{transition-delay: 0.2s;}
+.card__formField:focus ~ .focus-border i:before,
+.card__formField:focus ~ .focus-border i:after{height: 100%; transition: 0.2s;}
+.card__formField:focus ~ .focus-border i:after{transition-delay: 0.4s;}
+.movie {
+  position: relative;
+  
+}
+.button {
+  position: absolute;
+  bottom: 20px;
+  min-width: 250px;
+  margin-top: 35px;
+    min-height: 32px;
+    background-color: rgb(121 133 242 / 70%);
+    border-radius: 5px;
+}
+
+/* .liked { display: none; }   */
+
+.liked {
+  background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+
+
+
+label {
+    background: var(--bg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: calc(var(--u) * 1.5);
+  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label:before {
+    content: "49";
+    position: absolute;
+    min-width: 50%;
+    left: 25%;
+    text-align: center;
+    top: 0;
+  bottom: 0;
+    background: var(--bg);
+    border-radius: calc(var(--u) * 2);
+    font-size: calc(var(--u) * 2);
+    font-family: Arial, Helvetica, serif;
+    padding: calc(var(--u) * 0.5);
+    box-sizing: border-box;
+    color: var(--clr);
+    line-height: calc(var(--u) * 2.25);
+    z-index: -1;
+  transition: all 0.5s ease 0s;
+  animation: counter-bot 1s ease 0s;
+}
+
+.liked:checked ~ label:before {
+    content: "50";
+    color: #fff;
+  background: #ff3c41; 
+  
+  bottom: inherit;
+  transition: all 0.5s ease 0s;
+  animation: counter-top 1s ease 0s;
+}
+
+@keyframes counter-top {
+  70% { top: calc(var(--u) * -4.75); }
+}
+
+@keyframes counter-bot {
+  70% { 
+    top: inherit; 
+    bottom: calc(var(--u) * -5); 
+  }
+}
+
+
+label:after { 
+  content: "";
+    width: calc(var(--u) * 8);
+    height: calc(var(--u) * 8);
+    position: absolute;
+    border-radius: 100%;
+    box-sizing: border-box;
+    z-index: -2;
+    animation: disc-gray 1s ease 0s, spin-gray 0.65s ease-in-out 0.25s;
+    transform: rotate(0deg);
+  --pos: 95%;
+    background: 
+    radial-gradient(circle at 50% 50%, #fff0 0 62%, var(--bg) 63% 65%, #fff0 66% 100%), 
+    radial-gradient(circle at 50% var(--pos), var(--bg) 0 4%, #fff0 4.5% 100%);
+}
+
+@keyframes spin-gray {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin-red {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes disc-gray {
+  70% {
+    width: calc(var(--u) * 19);
+    height: calc(var(--u) * 19);
+  }
+}
+
+@keyframes disc-red {
+  70% {
+    width: calc(var(--u) * 19);
+    height: calc(var(--u) * 19);
+  }
+}
+
+.liked:checked ~ label:after {
+  --bg: #ff3c41;
+  --pos: 5%;
+    animation: disc-red 1s ease 0s, spin-red 0.65s ease-in-out 0.25s;
+}
+
+
+
+
+
+
+label span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: dislike 0.5s ease 0s;
+}
+/*
+label span:before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    border-radius: calc(var(--u) * 5);
+    transform: translate(calc(var(--u) * 2.235), calc(var(--u) * 4.5));
+    border: calc(var(--u) * 2.71) solid transparent;
+    border-top: calc(var(--u) * 2.9) solid var(--clr);
+}
+
+label span:after {
+    content: "";
+    background: 
+    radial-gradient(circle at 40% 45%, var(--clr) 0 calc(var(--u) * 1.25), #fff0 calc(var(--u) * 1.325) 100%), 
+    radial-gradient(circle at 60% 45%, var(--clr) 0 calc(var(--u) * 1.25), #fff0 calc(var(--u) * 1.325) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+*/
+label span:before {
+    content: "";
+    position: absolute;
+    border-radius: 0.25vmin;
+    border: 3.6vmin solid #fff0;
+    border-top: 4vmin solid var(--clr);
+    margin-top: 7.65vmin;
+    margin-left: 4vmin;
+}
+
+label span:after {
+    content: "";
+    position: absolute;
+    background: var(--clr);
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 100%;
+    margin-left: 3.35vmin;
+    margin-top: 3.5vmin;
+    box-shadow: 3.5vmin 0 0 0 var(--clr);
+}
+
+.liked:checked ~ label span {
+  --clr: #ff3c41; 
+  animation: like 0.5s ease 0s;
+}
+
+
+@keyframes like {
+  75% { transform: scale(1.25); }
+}
+@keyframes dislike {
+  75% { transform: scale(0.75); }
+}
+
+
+
+
+
+
+label span:before,  label span:after {
+    --clr: #9d4958;
+}
+
+.liked:checked ~ label span:before, .liked:checked ~ label span:after {
+    --clr: #ff3c41; 
+}
+
+.infoTitle {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 100%;
+    justify-content: center;
+    display: flex;
+    color: black;
+    animation-name: popup;
+    animation-duration: 800ms;
+}
+
+.infoDesc{
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 1.8%;
+}
+
+.favouritesButton {
+  margin-top: 1%;
+  margin-bottom: 3%;
+  appearance: none;
+background-color: transparent;
+border: 3px solid #1A1A1A;
+border-radius: 35px;
+box-sizing: border-box;
+color: #1A1A1A;
+cursor: pointer;
+display: inline-block;
+font-family: 'Raleway', sans-serif ;
+font-size: 16px;
+font-weight: 900;
+line-height: normal;
+letter-spacing: 1.5px;
+
+min-height: 30px;
+min-width: 0;
+outline: none;
+padding: 10px 0;
+text-align: center;
+text-decoration: none;
+transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+width: 25%;
+will-change: transform;
+
+}
+.favouritesButton:disabled {
+  pointer-events: none;
+}
+
+.favouritesButton:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.favouritesButton:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.likeImage {
+  width: 26px;
+  height: 26px;;
+}

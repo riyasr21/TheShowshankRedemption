@@ -1,11 +1,184 @@
-.App {
+.landingPage {
+    width: 100%;
+    height: 100%;
+
+}
+.heroSection {
    
-    padding: 0 100px;
+    /* padding: 0 100px;
+    display: flex; */
+    width: 100%;
+    height: 87vh;
+    /* position: fixed; top: 11%; left: 0; */
     display: flex;
+    flex-direction: row;
+    background-color: #F2F2F0;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1%;
+    overflow-x: hidden;
+}
+
+.heroSection__left {
+    padding-top: 1%;
+    width: 30%;
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    
+    
+}
+.heroSection__left--green {
+    background-color: #CCF279;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: smaller;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    animation: popup;
+    animation-duration: 800ms;
+}
+.heroSection__left--text {
+   
+    text-align: start;
+    font-family: 'Raleway', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 1.5px 0 #888888;
+    
+}
+.heroSection__left--textGrey {
+    
+    text-align: start;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 0 #888888;
+    color: #a9a9a9
+    
+}
+
+.heroSection__left--searchButton {
+    margin-top: 5%;
+    margin-bottom: 20%;
+    appearance: none;
+  background-color: transparent;
+  border: 3px solid #1A1A1A;
+  border-radius: 35px;
+  box-sizing: border-box;
+  color: #1A1A1A;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif ;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+  will-change: transform;
+
+}
+.heroSection__left--searchButton:disabled {
+    pointer-events: none;
+  }
+  
+  .heroSection__left--searchButton:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .heroSection__left--searchButton:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+
+.heroSection__right {
+    padding-top: 4%;
+    /* margin-top: 6%; */
+    padding-right: 6%;
+    /* background-color: aqua; */
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2%;
+    background-color: #CCF279;
+    border-radius: 15px;
     align-items: center;
     justify-content: center;
 }
 
+
+
+.heroSection__right--img1 {
+    display: flex;
+}
+
+.heroSection__right--img1 img {
+    display: inline;
+    z-index: 3;
+}
+.heroSection__right--img2 {
+    display: flex;
+    position: relative;
+    top: -100px;
+    left: -10px
+}
+.heroSection__right--img2 img {
+    display: inline;
+    z-index: 4;
+}
+
+.heroSection__right--img1--whiteBg, .heroSection__right--img2--whiteBg {
+    
+    width: 162px;
+    height: 255px;
+    background: white;
+    margin-left: -180px;
+    margin-top: 70px;
+    border-radius: 2px;
+    transform:
+    perspective(600px)
+    rotateX(352deg);
+  
+   
+}
+.heroSection__right--img2--whiteBg {
+    z-index: 3;
+}
+
+.heroSection__right--lines {
+    display: inline-block;
+    /* padding: 1px; */
+    width: 276px;
+    height: 250px;
+    flex-grow: 1;
+    position: relative;
+    top: 110px;
+    left: 190px;
+    
+    min-width: 155px;
+background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
 .books {
     display: flex;
     gap: 10px
@@ -19,10 +192,14 @@
 
 }
 
-img {
+.heroSection__right--images {
     width: 200px;
     height: 300px;
     object-fit: cover;
     background-color: rgba(180, 180, 50, 0.723);
+    border-radius: 10px;
 }
+
+
+
 

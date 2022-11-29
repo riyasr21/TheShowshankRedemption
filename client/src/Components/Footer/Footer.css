@@ -1,0 +1,220 @@
+
+
+.FooterWrapper {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  background:black;
+  
+  /* bottom: 0; */
+}
+@font-face {
+  font-family: 'Wade-sans';
+  src: local('Wade-sans'), url(../../Assets/Fonts/WadeSansLightPlain.ttf) format('truetype');
+}
+ 
+.FooterWrapper__container {
+    /* @include make-flex($dir: row, $just: space-between, $align: center); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1500px;
+    padding: 30px 40px 0 40px;
+    gap: 150px;
+    /* @include respondAt(1525px) {
+      padding: 0 60px 0 100px;
+      gap: 100px;
+    }
+    @include respondAt(1335px) {
+      padding: 0 90px;
+      gap: 150px;
+    }
+    @include respondAt(1135px) {
+      padding: 0 40px;
+    }
+
+    @include respondAt(840px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @include respondAt(470px) {
+      padding: 0 0;
+    } */
+  }
+
+  .FooterWrapper__left {
+    /* @include box(40%); */
+    height: 100%;
+    width: 40%;
+    /* @include make-flex($align: center); */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    /* @include respondAt(1095px) {
+      width: 250px;
+    }
+    @include respondAt(610px) {
+      width: 100%;
+      align-items: center;
+      padding: 0 10px;
+    } */
+  }
+  .FooterWrapper__middle {
+    display: flex;
+    flex-direction: row;
+    gap: 120px;  
+    width : 50%;
+    padding-left: 11%;
+    align-items: center;
+  }
+
+  .FooterWrapper__middle--anchorTag {
+    all : unset;
+    color: white;
+    font-family : 'Raleway', sans-serif;
+    cursor: pointer;
+
+  }
+  .FooterWrapper__middle--anchorTag:hover {
+    color: #CCF279;
+    font-weight: bold;
+  }
+.FooterWrapper__left--logo {
+  padding: 20px ;
+  padding-left: 50px;
+}
+  .FooterWrapper__left--logoImg {
+    display: inline;
+width: 47px;
+height: 47px;
+filter: brightness(0) saturate(100%) invert(99%) sepia(51%) saturate(0%) hue-rotate(24deg) brightness(106%) contrast(100%);
+transition: all ease-in;
+-webkit-transition : -webkit-filter 200ms linear
+/* background-color: #F2F2F0; */
+  }
+
+  .FooterWrapper__left--logoImg:hover {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(95%) saturate(313%) hue-rotate(22deg) brightness(105%) contrast(90%);
+  }
+  .FooterWrapper__right--title {
+    
+    letter-spacing: 5px;
+    font-family: 'Wade-sans', sans-serif;
+    align-self: center;
+    font-size: larger;
+    font-weight: 900;
+    color : white;
+    padding-right: 50px;
+    /* transition: all ease-in 0.5s; */
+
+  }
+
+  .FooterWrapper__right--titleTag {
+    all: unset;
+    cursor : pointer;
+  }
+  .FooterWrapper__right--titleTag:hover {
+    font-size: x-large;
+
+  }
+ 
+  /* .FooterWrapper__left--logo {
+      /* @include box(330px, auto); */
+      /* width: 330px;
+      height:auto;
+      margin-bottom: 30px;
+      padding: 0 10px; */
+      /* filter: var(--svgfilter);
+      @include respondAt(1095px) {
+        width: 250px;
+        margin-top: 30px;
+      } */
+      /* @include respondAt(610px) {
+        width: 250px;
+        align-items: center;
+      } */
+    /* } */ */
+
+    
+  
+
+
+    .FooterWrapper__right--Service {
+      font-family: "Poppins", sans-serif;
+      list-style-type: none;
+      /* @include make-flex($align: flex-start); */
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      
+
+      /* .mailIcon,
+      .callIcon,
+      .SocialMediaHandles {
+        @include make-flex($dir: row);
+        gap: 5px;
+        a {
+          &:hover {
+            color: var(--contactHover);
+          }
+        }
+      } */
+
+      /* .SocialMediaHandles {
+        @include make-flex($dir: row, $just: flex-start);
+        @include box(100%, auto);
+        gap: 5px;
+        margin-top: 4px;
+
+        a {
+          img {
+            width: 30px;
+          }
+        }
+      } */
+    }
+    .FooterWrapper__right--Service a {
+        font-size: 15px;
+        font-weight: 400;
+       
+        text-decoration: none;
+        color: #f4f5fc;
+      }
+    .FooterWrapper__right--rowHeading {
+      /* @include respondAt(840px) {
+        font-size: 22px;
+      } */
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-size: 25px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.46);
+    }
+    .FooterWrapper__right {
+      /* @include make-flex($dir: row, $just: space-between, $align: flex-start); */
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 30px;
+      /* @include box(50%); */
+      width: 30%;
+      
+  
+      /* @include respondAt(1095px) {
+        width: 69%;
+        padding: 70px 0 70px 20px;
+      }
+      @include respondAt(840px) {
+        width: 100%;
+        padding: 40px 25px 55px;
+        gap: 50px;
+        flex-wrap: wrap;
+      } */
+  }

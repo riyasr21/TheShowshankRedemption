@@ -1,0 +1,34 @@
+.favPage {
+    box-sizing: border-box;
+    background-color: #F2F2F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* padding: 3%; */
+    align-items: center;
+    height: 100vh;
+    /* width: 100vw; */
+    top: 10%; left: 0;
+    overflow: auto;
+    
+    
+    
+  }
+
+body {
+  height: 100vh;
+  width: 100vw;
+  }
+  ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+.infoT {
+  font-family: 'Raleway', sans-serif;
+}
+  .deleteImage {
+    padding-top: 2px;
+    width: 23px;
+    height: 23px;;
+  }
+  
