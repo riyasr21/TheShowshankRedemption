@@ -27,15 +27,16 @@ npm run
    
 Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
 
-# DON'T READ AFTER THIS, TO BE EDITED.
+# WHAT OUR WEBSITE DOES ? 
 
-It is suggested to use VS Code for this project. Remix does not support css pre-processors out of the box so we are using [Sass](https://sass-lang.com/) to compile our SCSS files into CSS.
+1. Extracts movies or shows from an existing database based on user preferences.
+2. Creation of user profiles by providing the feature of sign up/ log in into the website
+3. Users have the functionality of creating and updating a table of their favourites. 
 
-The compiled CSS files will reside in the same directory as the SCSS files. To avoid confusion, I made a workspace setting for vscode that hides the compiled CSS files within VS Code. So while importing the stylesheets, you'll have to import the file with the extension .css.
 
-If you are using some other IDE, please look for a way to hide the compiled CSS files so you won't have any confusion.
+## ER Model
+![ERModel](https://user-images.githubusercontent.com/89318501/204541187-f11f71c2-ca60-4f44-b6fe-9b672e14bda6.png)
 
-## Compiling SCSS
 
 <details>
 <summary>Read more</summary>
