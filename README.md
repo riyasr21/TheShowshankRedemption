@@ -1,4 +1,4 @@
-# The Showshank Redemption
+# THE SHOWSHANK REDEMPTION
 DBMS Project
 
 Tutorial :- [Youtube video](https://www.youtube.com/watch?v=fPuLnzSjPLE&t=2384s&ab_channel=LamaDev)
