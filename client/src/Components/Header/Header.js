@@ -9,22 +9,10 @@ export default function Header() {
   return (
 
     <nav className="HeaderWrapper">
-      {/* {dropdown && (
-            <a href="/">
-              <img
-                className={`
-                  HeaderWrapper__left--logo 
-                  ${navState ? "HeaderWrapper__left--logo--blur" : ""}`}
-                src={appLogo}
-                alt="snu explore Logo"
-              />
-            </a>
-          )} */}
+     
       <div
         className="HeaderWrapper__menu"
-        // className={`HeaderWrapper__menu ${
-        //   navState ? "HeaderWrapper__menu--open" : ""
-        // }`}
+       
       >
         <div className="HeaderWrapper__left">
           <a href="/">
@@ -37,14 +25,7 @@ export default function Header() {
         </div>
         <div className="HeaderWrapper__middle">
           <ul>
-            {/* {dropdown && (
-                <div style={{ width: "100%" }}>
-                  <li className="HeaderWrapper__middle--option">
-                    <p>Features</p>
-                  </li>
-                  <div className="HeaderWrapper__middle--lineSep"></div>
-                </div>
-              )} */}
+            
             <li className="HeaderWrapper__middle--option">
               <NavLink
                 to="/"
@@ -52,13 +33,7 @@ export default function Header() {
                   isActive ? "activePage" : "not-active-class"
                 }
               >
-                {/* {dropdown && (
-                    <img
-                      className="HeaderWrapper__middle--option"
-                      src={locationIcon}
-                      alt="snu explore Logo"
-                    />
-                  )} */}
+               
                 <div className="arrow-left"></div>
                 Home
                 <div className="arrow-right"></div>
