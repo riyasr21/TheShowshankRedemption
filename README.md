@@ -5,6 +5,8 @@ Tutorial :- [Youtube video](https://www.youtube.com/watch?v=fPuLnzSjPLE&t=2384s&
 
 Tinder Card component :- [CodeSandbox Link](https://codesandbox.io/s/github/3DJakob/react-tinder-card-demo/tree/master/?file=/src/App.css)
 
+## How to start the website
+
 Make a new folder for the DBMS project.
 
 ```sh
@@ -67,3 +69,4 @@ For every user, as soon as they like a movie, a trigger (BEFORE INSERT TRIGGER) 
 ![image](https://user-images.githubusercontent.com/89318501/204545283-f558b817-9bbd-4263-adae-09c82942c8a0.png)
 
 
+### Thank you!
